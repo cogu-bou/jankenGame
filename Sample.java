@@ -9,12 +9,9 @@ public class Sample {
 		// TODO 自動生成されたメソッド・スタブ
 		//変数の初期化
 		String result="";
-		String result1="";
-		String result2="";
+//		String result1="";
+//		String result2="";
 		
-		String janken1="";
-		String janken2="";
-		String janken3="";
 		String s="";
 		String k="";
 		
@@ -24,21 +21,26 @@ public class Sample {
 	
 	Scanner in =new Scanner(System.in);
 	System.out.print("じゃんけんしましょう！");
+	System.out.println("出したいハンドを入力してね！");
+	System.out.println( "例）グー、チョキ、パー");
 	String janken = in.next();
 	
 	
 	//データの処理
 	//ユーザーハンドのこと
+	//if
 if(janken.intern()=="グー") {
-	janken1=janken;
-	s=janken1;
+	s=janken;
+	
 }else if(janken.intern()=="チョキ") {
-	janken2=janken;
-	s=janken2;
+	s=janken;
+	
 }else if(janken.intern()=="パー") {
-	janken3=janken;
-	s=janken3;
+	s=janken;
+}else {
+	System.out.println("カタカナで入力してね！");
 }
+
 //System .out.println(s);
 
 //	Randomで出たハンド
@@ -47,34 +49,36 @@ if(janken.intern()=="グー") {
 		result="グー";
 		break;
 	case 1:
-		result1="チョキ";
+		result="チョキ";
 		break;
 	case 2:
-		result2="パー";
+		result="パー";
 		break;
 	}
+	System .out.println("ジャンケンマスターのハンドは:"+result+"だよ");
 	
-	if(result.intern()==janken1.intern()) {
+	
+	if(result.intern()=="グー"&&s.intern()=="グー") {
 		k="あいこです";
-	}else if(result.intern()==janken2.intern()) {
+	}else if(result.intern()=="グー"&&s.intern()=="チョキ") {
 		k="あなたの負けです";
-	}else if(result.intern()==janken3.intern()) {
+	}else if(result.intern()=="グー"&&s.intern()=="パー") {
 		k="あなたの勝ちです";
 	}
 	
-	if(result1.intern()==janken1.intern()) {
+	if(result.intern()=="チョキ"&&s.intern()=="チョキ") {
 		k="あいこです";
-	}else if(result1.intern()==janken2.intern()) {
+	}else if(result.intern()=="チョキ"&&s.intern()=="パー") {
 		k="あなたの負けです";
-	}else if(result1.intern()==janken3.intern()) {
+	}else if(result.intern()=="チョキ"&&s.intern()=="グー") {
 		k="あなたの勝ちです";
 	}
 	
-	if(result2.intern()==janken1.intern()) {
+	if(result.intern()=="パー"&&s.intern()=="パー") {
 		k="あいこです";
-	}else if(result2.intern()==janken2.intern()) {
+	}else if(result.intern()=="パー"&&s.intern()=="グー") {
 		k="あなたの負けです";
-	}else if(result2.intern()==janken3.intern()) {
+	}else if(result.intern()=="パー"&&s.intern()=="チョキ") {
 		k="あなたの勝ちです";
 	}
 	System.out.println(k);
